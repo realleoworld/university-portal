@@ -1,0 +1,20 @@
+.leon {
+  background-image: url(/assets/images/featured-pic-2.jpeg);
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+tbody,
+tfoot,
+th,
+thead,
+tr {
+  font-size: 17px;
+  font-style: bold;
+  color: black;
+}
+td {
+  background-color: white;
+}
