@@ -14,7 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddStudentComponent } from './studentdetails/add-student/add-student.component';
 import { FormsModule } from '@angular/forms';
 import { EditStudentdetailsComponent } from './studentdetails/edit-studentdetails/edit-studentdetails.component';
-
+import { CoursedetailsComponent } from './addcourses/allcoursedetails/coursedetails/coursedetails.component';
+import { AddcoursesComponent } from './addcourses/addcourses.component';
+import { EditcoursesComponent } from './addcourses/allcoursedetails/editcourses/editcourses.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +29,9 @@ import { EditStudentdetailsComponent } from './studentdetails/edit-studentdetail
     StudentdetailsComponent,
     AddStudentComponent,
     EditStudentdetailsComponent,
+    CoursedetailsComponent,
+    AddcoursesComponent,
+    EditcoursesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

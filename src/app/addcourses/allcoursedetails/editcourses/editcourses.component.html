@@ -1,25 +1,38 @@
-<div class="lukaku">
+<div class="Busola">
   <div class="form-body">
     <div class="row">
       <div class="form-holder">
         <div class="form-content">
           <div class="form-items">
-            <h3>Register Today</h3>
+            <h3>Edit Student</h3>
             <p>Fill in the data below.</p>
             <form
-              ngNativeValidate
               #form="ngForm"
-              (ngSubmit)="students()"
+              (ngSubmit)="updateCourse()"
               class="requires-validation"
             >
               <div class="col-md-12">
                 <input
-                  onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))"
                   class="form-control"
-                  [(ngModel)]="student.name"
+                  [(ngModel)]="courseDetails.courseId"
+                  type="text"
+                  name="id"
+                  placeholder="Id"
+                  required
+                />
+                <div class="valid-feedback">Username field is valid!</div>
+                <div class="invalid-feedback">
+                  Username field cannot be blank!
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <input
+                  onkeypress="return /[a-z]/i.test(event.key)"
+                  class="form-control"
+                  [(ngModel)]="courseDetails.courseName"
                   type="text"
                   name="name"
-                  autocomplete="off"
                   placeholder="Full Name"
                   required
                 />
@@ -32,10 +45,9 @@
               <div class="col-md-12">
                 <input
                   class="form-control"
-                  [(ngModel)]="student.email"
+                  [(ngModel)]="courseDetails.courseFees"
                   type="email"
                   name="email"
-                  autocomplete="off"
                   placeholder="E-mail Address"
                   required
                 />
@@ -44,59 +56,22 @@
               </div>
 
               <div class="col-md-12">
-                <select
-                  onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))"
+                <input
+                  onkeypress="return /[a-z]/i.test(event.key)"
                   class="form-control"
-                  type="text"
-                  name="Department"
-                  placeholder="Department"
-                  required
-                  autocomplete="off"
-                  name="Department"
-                  [(ngModel)]="student.department"
-                  #Department="ngModel"
-                  style="color: red; font-size: 16px; font-weight: 300"
-                >
-                  <option
-                    class="hidden"
-                    selected
-                    disabled
-                    value=""
-                    style="color: red"
-                  >
-                    Courses
-                  </option>
-
-                  <option
-                    *ngFor="let course of course"
-                    value="{{ course.courseName }}"
-                  >
-                    {{ course.courseName }}
-                  </option>
-                  <!-- <option value="Programmers">Mathematics</option>
-                  <option value="Documentation">Geology</option>
-                  <option value="Quality Assurance">Physics</option>
-                  <option value="Management">Chemistry</option>
-                  <option value="Human Resources">Economics</option>
-                  <option value="Accounting">Statics</option> -->
-                </select>
-                <!-- <input
-                  onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))"
-                  class="form-control"
-                  [(ngModel)]="student.department"
+                  [(ngModel)]="courseDetails.isDeleted"
                   type="text"
                   name="department"
-                  autocomplete="off"
-                  placeholder="Department"
+                  placeholder="department"
                   required
                 />
                 <div class="valid-feedback">Department field is valid!</div>
                 <div class="invalid-feedback">
                   Department field cannot be blank!
-                </div> -->
+                </div>
                 <!-- <select
                 class="form-select mt-3"
-                [(ngModel)]="student.department"
+                [(ngModel)]="studentDetails.department"
                 required
               >
                 <option selected disabled value="">Courses</option>
@@ -111,14 +86,12 @@
               <div class="col-md-12">
                 <input
                   class="form-control"
-                  [(ngModel)]="student.phone"
+                  [(ngModel)]="courseDetails.isActive"
                   type="number"
-                  autocomplete="off"
-                  name="password"
-                  autocomplete="off"
+                  style="margin-top: 15px"
+                  name="phone"
                   placeholder="Phone number"
                   required
-                  style="margin-top: 25px"
                 />
                 <div class="valid-feedback">Password field is valid!</div>
                 <div class="invalid-feedback">
@@ -143,8 +116,17 @@
             </div> -->
 
               <div class="form-button mt-3">
-                <button id="submit" type="submit" class="btn btn-primary">
-                  Register
+                <button id="submit" type="submit" class="btn btn-primary mr-5">
+                  Save
+                </button>
+                <button
+                  id="button"
+                  type="submit"
+                  class="btn btn-danger"
+                  (click)="deleteCourse(courseDetails.courseId)"
+                  style="margin-left: 10px"
+                >
+                  Delete
                 </button>
               </div>
             </form>
@@ -154,10 +136,3 @@
     </div>
   </div>
 </div>
-<script>
-  console.log("this script");
-  function alphaOnly(event) {
-    var key = event.keyCode;
-    return (key >= 65 && key <= 90) || key == 8;
-  }
-</script>

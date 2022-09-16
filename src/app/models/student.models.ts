@@ -1,7 +1,8 @@
 export interface studentdetail {
-  id: string;
+  id: number;
   name: string;
   email: string;
   department: string;
-  phone: number;
+  phone: number| null;
+  isActive: boolean;
 }

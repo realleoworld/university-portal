@@ -9,16 +9,6 @@ body {
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
 }
-.lukaku {
-  background-image: url(/assets/images/featured-pic-2.jpeg);
-  height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-::placeholder {
-  color: red;
-}
 
 html,
 body {
@@ -66,7 +56,7 @@ body {
 }
 
 .form-content h3 {
-  color: black;
+  color: #fff;
   text-align: left;
   font-size: 28px;
   font-weight: 600;
@@ -78,7 +68,7 @@ body {
 }
 
 .form-content p {
-  color: teal;
+  color: #fff;
   text-align: left;
   font-size: 17px;
   font-weight: 300;
@@ -146,6 +136,13 @@ body {
   margin-bottom: 14px;
 }
 
+.Busola {
+  background-image: url(/assets/images/jCole1.jpeg);
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .form-content textarea:hover,
 .form-content textarea:focus {
   border: 0;

@@ -1,0 +1,50 @@
+<div class="wale">
+  <div class="container">
+    <h1 class="mb-3">Add Courses</h1>
+    <table class="table" *ngIf="course && course.length > 0">
+      <thead>
+        <tr>
+          <th>CourseId</th>
+          <th>CourseName</th>
+          <th>CourseFees</th>
+          <th>isDeleted</th>
+          <th>isActive</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of course">
+          <td>{{ course.courseId }}</td>
+          <td>{{ course.courseName }}</td>
+          <td>{{ course.courseFees }}</td>
+          <td>{{ course.isDeleted }}</td>
+          <td>{{ course.isActive }}</td>
+          <td>
+            <a [routerLink]="['/coursedetails', 'edit', course.courseId]"
+              >View</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p *ngIf="course.length > 0">
+      Number of Courses In The School: {{ course.length }}
+    </p>
+
+    <p *ngIf="!course || course.length <= 0">No Course Found</p>
+  </div>
+</div>
+
+<div class="Dm">
+  <a (click)="onSave()" routerLink="/addcourses">
+    <button class="btn btn-primary">Add Courses</button></a
+  >
+
+  <!-- <button
+    class="btn btn-primary"
+    (click)="onSave()"
+    a
+    [routerLink]="['/coursedetails']"
+  >
+    Add New Student
+  </button> -->
+</div>

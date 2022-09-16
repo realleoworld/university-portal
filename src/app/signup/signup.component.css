@@ -16,7 +16,12 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+::placeholder {
+  color: red;
+}
+.omo {
+  color: red;
+}
 html,
 body {
   height: 100%;

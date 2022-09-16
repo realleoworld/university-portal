@@ -6,23 +6,23 @@
       <div class="form-holder">
         <div class="form-content">
           <div class="form-items">
-            <h3>Welcome Admin</h3>
-            <p>Fill in the student data below.</p>
+            <h3>Add Courses</h3>
+            <p>Fill in the data below.</p>
             <form
               ngNativeValidate
               #form="ngForm"
-              (ngSubmit)="students()"
+              (ngSubmit)="courses()"
               class="requires-validation"
             >
               <div class="col-md-12">
                 <input
                   onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))"
                   class="form-control"
-                  [(ngModel)]="student.name"
+                  [(ngModel)]="course.courseName"
                   type="text"
                   name="name"
                   autocomplete="off"
-                  placeholder="Full Name"
+                  placeholder="Fill in Courses"
                   required
                 />
                 <div class="valid-feedback">Username field is valid!</div>
@@ -31,10 +31,10 @@
                 </div>
               </div>
 
-              <div class="col-md-12">
+              <!-- <div class="col-md-12">
                 <input
                   class="form-control"
-                  [(ngModel)]="student.email"
+                  [(ngModel)]="course.courseFees"
                   type="email"
                   name="email"
                   autocomplete="off"
@@ -43,9 +43,9 @@
                 />
                 <div class="valid-feedback">Email field is valid!</div>
                 <div class="invalid-feedback">Email field cannot be blank!</div>
-              </div>
+              </div> -->
 
-              <!--   <div class="col-md-12">
+              <!--  <div class="col-md-12">
                 <select
                   onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))"
                   class="form-control"
@@ -55,7 +55,7 @@
                   required
                   autocomplete="off"
                   name="Department"
-                  [(ngModel)]="student.department"
+                  [(ngModel)]="course.isDeleted"
                   #Department="ngModel"
                 >
                   <option class="hidden" selected disabled>Department</option>
@@ -93,68 +93,12 @@
               </select>
               <div class="valid-feedback">You selected a position!</div>
               <div class="invalid-feedback">Please select a position!</div> 
-              </div>-->
+              </div> -->
 
-              <div class="col-md-12">
-                <select
-                  onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))"
-                  class="form-control"
-                  type="text"
-                  name="Department"
-                  placeholder="Department"
-                  required
-                  autocomplete="off"
-                  name="Department"
-                  [(ngModel)]="student.department"
-                  #Department="ngModel"
-                >
-                  <option class="hidden" selected disabled>Department</option>
-
-                  <option
-                    *ngFor="let course of course"
-                    value="{{ course.courseName }}"
-                  >
-                    {{ course.courseName }}
-                  </option>
-                  <!-- <option value="Programmers">Mathematics</option>
-                  <option value="Documentation">Geology</option>
-                  <option value="Quality Assurance">Physics</option>
-                  <option value="Management">Chemistry</option>
-                  <option value="Human Resources">Economics</option>
-                  <option value="Accounting">Statics</option> -->
-                </select>
-                <!-- <input
-                  onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))"
-                  class="form-control"
-                  [(ngModel)]="student.department"
-                  type="text"
-                  name="department"
-                  autocomplete="off"
-                  placeholder="Department"
-                  required
-                />
-                <div class="valid-feedback">Department field is valid!</div>
-                <div class="invalid-feedback">
-                  Department field cannot be blank!
-                </div> -->
-                <!-- <select
-                class="form-select mt-3"
-                [(ngModel)]="student.department"
-                required
-              >
-                <option selected disabled value="">Courses</option>
-                <option value="jweb">Computer Science</option>
-                <option value="sweb">Mathematics</option>
-                <option value="pmanager">Geology</option>
-              </select>
-              <div class="valid-feedback">You selected a position!</div>
-              <div class="invalid-feedback">Please select a position!</div> -->
-              </div>
-
-              <div class="col-md-12">
+              <!-- <div class="col-md-12">
                 <input
                   class="form-control"
-                  [(ngModel)]="student.phone"
+                  [(ngModel)]="course.isActive"
                   type="number"
                   autocomplete="off"
                   name="password"
@@ -167,7 +111,7 @@
                 <div class="invalid-feedback">
                   Password field cannot be blank!
                 </div>
-              </div>
+              </div> -->
 
               <!-- <div class="form-check">
               <input

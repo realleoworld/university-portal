@@ -11,12 +11,14 @@ import { Router } from '@angular/router';
 })
 export class EditStudentdetailsComponent implements OnInit {
   studentDetails: studentdetail = {
-    id: '',
+    id: 0,
     name: '',
     email: '',
     department: '',
     phone: 0,
+    isActive: true,
   };
+  courseDetails: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,7 +30,6 @@ export class EditStudentdetailsComponent implements OnInit {
     this.route.paramMap.subscribe({
       next: (params) => {
         const id = params.get('id');
-
         if (id) {
           this.studentService.getStudent(id).subscribe({
             next: (response) => {
@@ -50,10 +51,10 @@ export class EditStudentdetailsComponent implements OnInit {
       });
   }
 
-  deleteStudent(id: string) {
-    this.studentService.deleteStudent(id).subscribe({
+  deleteStudent(studentId: any) {
+    this.studentService.deleteStudent(studentId).subscribe({
       next: (response) => {
-        this.router.navigate(['studentdetails']);
+        this.router.navigate(['coursedetails']);
       },
     });
   }

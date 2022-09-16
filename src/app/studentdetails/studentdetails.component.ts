@@ -8,6 +8,11 @@ import { StudentsService } from '../services/students.service';
   styleUrls: ['./studentdetails.component.css'],
 })
 export class StudentdetailsComponent implements OnInit {
+  activeCount: any;
+  inactiveCount: any;
+  onSave() {
+    throw new Error('Method not implemented.');
+  }
   student: studentdetail[] = [
     // {
     //   id: 'tgjtjtjtjttj',
@@ -31,6 +36,7 @@ export class StudentdetailsComponent implements OnInit {
     //   department: 'science',
     // },
   ];
+  totalCount: any;
 
   constructor(private studentsService: StudentsService) {}
 
@@ -38,6 +44,13 @@ export class StudentdetailsComponent implements OnInit {
     this.studentsService.getAllStudents().subscribe({
       next: (students) => {
         this.student = students;
+        this.totalCount = students.length;
+        this.activeCount = students.filter(
+          (student) => student.isActive == true
+        ).length;
+        this.inactiveCount = students.filter(
+          (student) => student.isActive == false
+        ).length;
       },
       error: (response) => {
         console.log(response);
