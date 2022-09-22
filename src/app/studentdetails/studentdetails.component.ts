@@ -43,6 +43,7 @@ export class StudentdetailsComponent implements OnInit {
   ngOnInit(): void {
     this.studentsService.getAllStudents().subscribe({
       next: (students) => {
+        console.log(students);
         this.student = students;
         this.totalCount = students.length;
         this.activeCount = students.filter(

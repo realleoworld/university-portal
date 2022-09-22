@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, observable } from 'rxjs';
+import { catchError, map, Observable, observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { studentdetail } from '../models/student.models';
 import { courseDetails } from '../models/course.model';
@@ -63,6 +63,21 @@ export class StudentsService {
     );
   }
 
+  authenticate(student: studentdetail): Observable<studentdetail> {
+    student.phone = 0;
+    console.log(student);
+    return this.http.post<studentdetail>(
+      this.baseApiUrl + '/api/Student/authenticate',
+      student
+    );
+    // .pipe(
+    //   map((data) => {
+    //     return data;
+    //   }),
+    //   catchError(this.handleError)
+    // );
+  }
+
   getStudent(id: string): Observable<studentdetail> {
     return this.http.get<studentdetail>(this.baseApiUrl + '/api/Student/' + id);
   }
@@ -87,5 +102,16 @@ export class StudentsService {
       this.baseApiUrl + '/api/Student/',
       student
     );
+  }
+
+  private handleError(err: HttpErrorResponse) {
+    let errorMessage = '';
+    if (err.error instanceof ErrorEvent) {
+      errorMessage = `An error occured: ${err.error.message}`;
+    } else {
+      errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;
+    }
+    console.error(errorMessage);
+    return throwError(() => errorMessage);
   }
 }

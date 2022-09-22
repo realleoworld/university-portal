@@ -12,11 +12,13 @@ import { StudentsService } from '../services/students.service';
 export class SignupComponent implements OnInit {
   student: studentdetail = {
     id: 0,
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
-    phone: null,
     department: '',
-    isActive: true,
+    phone: null,
+    isActive: false,
+    password: '',
   };
   course: courseDetails[] = [];
 

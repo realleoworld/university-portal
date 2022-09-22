@@ -11,8 +11,10 @@ import { EditStudentdetailsComponent } from './studentdetails/edit-studentdetail
 import { StudentdetailsComponent } from './studentdetails/studentdetails.component';
 import { EditcoursesComponent } from './addcourses/allcoursedetails/editcourses/editcourses.component';
 import { AddcoursesComponent } from './addcourses/addcourses.component';
+import { EachstudentComponent } from './eachstudent/eachstudent.component';
 const routes: Routes = [
   { path: '', component: HomepageComponent },
+  { path: 'eachstudent/:id', component: EachstudentComponent },
   { path: 'home', component: HomepageComponent },
   { path: 'coursedetails/add/:id', component: AddcoursesComponent },
   { path: 'dashboard', component: DashboardComponent },

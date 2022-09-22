@@ -11,32 +11,45 @@
       <div class="form-holder">
         <div class="form-content">
           <div class="form-items">
-            <h3>Register Today</h3>
+            <h3>Sign in</h3>
             <p>Fill in the data below.</p>
-            <form class="requires-validation" novalidate>
+            <form
+              ngNativeValidate
+              #form="ngForm"
+              (ngSubmit)="students()"
+              class="requires-validation"
+            >
               <div class="col-md-12">
                 <input
                   class="form-control"
-                  type="email"
-                  name="email"
+                  type="number"
+                  [(ngModel)]="student.id"
+                  name="matno"
                   placeholder="Mat no"
                   required
                 />
-                <div class="valid-feedback">Email field is valid!</div>
-                <div class="invalid-feedback">Email field cannot be blank!</div>
+                <div class="valid-feedback">Mat no field is valid!</div>
+                <div class="invalid-feedback">
+                  Mat no field cannot be blank!
+                </div>
               </div>
 
-              <!-- <div class="col-md-12">
+              <div class="col-md-12">
                 <input
+                  onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))"
                   class="form-control"
+                  [(ngModel)]="student.password"
                   type="password"
                   name="password"
-                  placeholder="password"
+                  autocomplete="off"
+                  placeholder="Password"
                   required
                 />
-                <div class="valid-feedback">Email field is valid!</div>
-                <div class="invalid-feedback">Email field cannot be blank!</div>
-              </div> -->
+                <div class="valid-feedback">Username field is valid!</div>
+                <div class="invalid-feedback">
+                  Username field cannot be blank!
+                </div>
+              </div>
               <div class="form-check">
                 <input
                   class="form-check-input"
@@ -54,12 +67,7 @@
               </div>
 
               <div class="form-button mt-3">
-                <button
-                  id="submit"
-                  type="submit"
-                  (click)="alert()"
-                  class="btn btn-primary"
-                >
+                <button id="submit" type="submit" class="btn btn-primary">
                   Sign In
                 </button>
               </div>

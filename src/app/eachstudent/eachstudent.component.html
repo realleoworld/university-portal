@@ -1,0 +1,33 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Matric Number</th>
+
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Email</th>
+      <th>Department</th>
+      <th>Phone</th>
+      <th>Active</th>
+      <!-- <th></th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ studentDetails.id }}</td>
+      <td>{{ studentDetails.firstName }}</td>
+      <td>{{ studentDetails.lastName }}</td>
+      <td>{{ studentDetails.email }}</td>
+      <td>{{ studentDetails.department }}</td>
+      <td>{{ studentDetails.phone }}</td>
+      <td>{{ studentDetails.isActive }}</td>
+      <!-- <td>{{ studentDetails.password }}</td> -->
+
+      <td>
+        <a [routerLink]="['/studentdetails', 'edit', studentDetails.id]"
+          >View</a
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>

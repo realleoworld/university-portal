@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { studentdetail } from 'src/app/models/student.models';
-import { StudentsService } from 'src/app/services/students.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { studentdetail } from '../models/student.models';
+import { StudentsService } from '../services/students.service';
 
 @Component({
-  selector: 'app-edit-studentdetails',
-  templateUrl: './edit-studentdetails.component.html',
-  styleUrls: ['./edit-studentdetails.component.css'],
+  selector: 'app-eachstudent',
+  templateUrl: './eachstudent.component.html',
+  styleUrls: ['./eachstudent.component.css'],
 })
-export class EditStudentdetailsComponent implements OnInit {
+export class EachstudentComponent implements OnInit {
   studentDetails: studentdetail = {
     id: 0,
     firstName: '',

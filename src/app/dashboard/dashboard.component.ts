@@ -12,11 +12,13 @@ import { StudentsService } from '../services/students.service';
 export class DashboardComponent implements OnInit {
   student: studentdetail = {
     id: 0,
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
-    phone: 0,
     department: '',
-    isActive: true,
+    phone: null,
+    isActive: false,
+    password: '',
   };
   course: courseDetails[] = [];
   constructor(

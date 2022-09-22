@@ -17,6 +17,7 @@ import { EditStudentdetailsComponent } from './studentdetails/edit-studentdetail
 import { CoursedetailsComponent } from './addcourses/allcoursedetails/coursedetails/coursedetails.component';
 import { AddcoursesComponent } from './addcourses/addcourses.component';
 import { EditcoursesComponent } from './addcourses/allcoursedetails/editcourses/editcourses.component';
+import { EachstudentComponent } from './eachstudent/eachstudent.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import { EditcoursesComponent } from './addcourses/allcoursedetails/editcourses/
     CoursedetailsComponent,
     AddcoursesComponent,
     EditcoursesComponent,
+    EachstudentComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

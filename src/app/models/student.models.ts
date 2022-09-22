@@ -1,8 +1,10 @@
 export interface studentdetail {
   id: number;
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   department: string;
-  phone: number| null;
+  phone: number | null;
   isActive: boolean;
+  password: string;
 }

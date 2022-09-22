@@ -16,11 +16,28 @@
                 <input
                   onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))"
                   class="form-control"
-                  [(ngModel)]="student.name"
+                  [(ngModel)]="student.firstName"
                   type="text"
                   name="name"
                   autocomplete="off"
-                  placeholder="Full Name"
+                  placeholder="First Name"
+                  required
+                />
+                <div class="valid-feedback">Username field is valid!</div>
+                <div class="invalid-feedback">
+                  Username field cannot be blank!
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <input
+                  onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))"
+                  class="form-control"
+                  [(ngModel)]="student.lastName"
+                  type="text"
+                  name="name"
+                  autocomplete="off"
+                  placeholder="Last Name"
                   required
                 />
                 <div class="valid-feedback">Username field is valid!</div>
@@ -123,6 +140,23 @@
                 <div class="valid-feedback">Password field is valid!</div>
                 <div class="invalid-feedback">
                   Password field cannot be blank!
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <input
+                  onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))"
+                  class="form-control"
+                  [(ngModel)]="student.password"
+                  type="password"
+                  name="password"
+                  autocomplete="off"
+                  placeholder="Password"
+                  required
+                />
+                <div class="valid-feedback">Username field is valid!</div>
+                <div class="invalid-feedback">
+                  Username field cannot be blank!
                 </div>
               </div>
 
